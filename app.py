@@ -26,7 +26,7 @@ def generate_password(length, use_uppercase, use_lowercase, use_symbols, use_num
 
 
 # Streamlit UI
-st.title("Enhanced Random Password Generator")
+st.title("Random Password Generator")
 
 # Input controls
 length = st.slider("Select password length", min_value=8, max_value=32, value=12)
