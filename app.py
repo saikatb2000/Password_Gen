@@ -1,7 +1,6 @@
 import random
 import string
 import streamlit as st
-import pyperclip
 
 
 # Function to generate password
@@ -21,7 +20,6 @@ def generate_password(length, use_uppercase, use_lowercase, use_symbols, use_num
         return "Please select at least one character set!"
 
     password = ''.join(random.choice(characters) for _ in range(length))
-
     return password
 
 
@@ -39,11 +37,6 @@ use_numbers = st.checkbox("Include Numbers", value=True)
 if st.button("Generate Password"):
     password = generate_password(length, use_uppercase, use_lowercase, use_symbols, use_numbers)
     st.success(f"Generated Password: {password}")
-
-    # Copy to clipboard button
-    if st.button("Copy to Clipboard"):
-        pyperclip.copy(password)
-        st.write("Password copied to clipboard!")
 
 # Optional: Info about the password
 st.write("Use the controls to customize your password with different character types.")
